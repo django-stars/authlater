@@ -1,0 +1,14 @@
+<html>
+  <body>
+    {% if user.is_authenticated %}
+      <a href="{% url auth-logout %}">Logout</a>
+    {% endif %}
+    <ul>
+      {% for message in messages %}
+        <li>{{ message.message }}</li>
+      {% endfor %}
+    </ul>
+    {% block content %}
+    {% endblock content %}
+  </body>
+</html>
